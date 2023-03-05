@@ -67,6 +67,7 @@ To Add:
 - date helper function
 - with auth function
 - js login and logout
+- login handlebars
 
 <p align="right">(<a href="#tech-blog">back to top</a>)</p>
 
