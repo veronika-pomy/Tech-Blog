@@ -64,6 +64,7 @@ This list includes resources used for the project.
 
 To Add:
 - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+- date helper function
 
 <p align="right">(<a href="#tech-blog">back to top</a>)</p>
 
