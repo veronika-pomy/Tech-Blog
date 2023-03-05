@@ -57,6 +57,8 @@ ___
 This list includes resources used for the project. 
 
 - [Best README Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
+- [Coolors](https://coolors.co/)
+- [Google Fonts API: M PLUS Rounded 1c](https://fonts.google.com/specimen/M+PLUS+Rounded+1c)
 - [Node.js](https://nodejs.org/en/)
 - [MySQL](https://www.mysql.com/)
 - [Sequelize](https://sequelize.org/)

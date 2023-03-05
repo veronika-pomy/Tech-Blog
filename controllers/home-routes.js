@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
 // GET specific post by id
 // Use middleware to check login status before allowing user to see post
-router.get('/post/:id', withAuth, async (req, res) {
+router.get('/post/:id', withAuth, async (req, res) => {
     try {
         const dbPostData = await Post.findByPk(req.params.id, {
             include: [

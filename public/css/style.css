@@ -1,0 +1,94 @@
+:root {
+    --uranian-blue: #A0DDFF;
+    --vista-blue: #758ECD;
+    --periwinkle: #C1CEFE;
+    --cornflower-blue: #7189FF;
+    --royal-purple: #624CAB;
+    --light: white;
+    --dark: black;
+    --error: red;
+    --border-radius: 0.3rem;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background-color: var(--light);
+}
+
+a {
+    color: var(--dark);
+    text-decoration: none;
+    color: var(--uranian-blue);
+    padding: 10px;
+}
+
+a:visited {
+    color: inherit;
+}
+
+header {
+    padding: 20px;
+    text-align: left;
+    background: var(--royal-purple);
+    color: var(--uranian-blue);
+}
+
+nav {
+    padding: 5px;
+}
+
+.main-title {
+    text-align: center;
+}
+
+.btn {
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-size: 100%;
+    color: var(--uranian-blue);
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* POST STYLE */
+.post-container {
+    margin: 50px;
+    padding: 15px;
+    border: 4px solid var(--vista-blue);
+}
+
+/* COMMENT STYLE */
+.post {
+    margin: 50px;
+    padding: 15px;
+}
+
+.container-post {
+    padding: 15px;
+    border: 4px solid var(--vista-blue);
+}
+
+.comment {
+    background-color: var(--periwinkle);
+    color: var(--royal-purple);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.comment h3, h5 {
+    margin: 5px;
+}
+
+.comment p {
+    margin-left: 5px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}

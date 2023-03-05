@@ -1,9 +1,7 @@
-<section>
-  <a href="/comment/{{id}}"> 
-    <h3>{{author}}</h3>
-    <p>{{post_date}}</p>
-    <p>{{content}}</p>
-  </a>
+<section class='comment'>
+  <h3>{{author}}</h3>
+  <h5>{{format_date post_date}}</h5>
+  <p>{{content}}</p>
 </section>
 
 {{!-- all comments should be associated with their respective post --}}
