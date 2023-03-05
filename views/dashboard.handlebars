@@ -1,0 +1,15 @@
+{{!-- need to figure out how to display posst only from the loggedin user --}}
+
+<section class="container">
+  <h3 class="post-name">{{post.title}}</h3>
+  <h4>{{post.content}}</h4>
+  <h4>{{post.author}}</h4>
+  <h5>{{format_date post.post_date}}</h5>
+  <section>
+    {{#each post.comments as |comment|}}
+    {{> comment-details}}
+    {{/each}}
+  </section>
+</section>
+
+{{!-- need to add section for creating new post --}}
