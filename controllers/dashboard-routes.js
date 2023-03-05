@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment } = require('../models');
 // Import middleare for authenticating that user is logged in
-const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth.js');
 
 // GET all posts
 
