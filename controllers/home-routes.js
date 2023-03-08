@@ -65,9 +65,9 @@ router.get('/post/:id', withAuth, async (req, res) => {
 router.post('/post/:id', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
-      content: req.body.content,
+      content: req.body,
       post_date: '2020-05-08 04:00:00',
-      post_id: 1,
+      post_id: id,
       user_id: req.session.user_id,
     });
 
@@ -86,6 +86,28 @@ router.get('/login', (req, res) => {
   
     res.render('login');
 });
-  
+
+// GET all posts for a specific user
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    const dbUserData = await User.findByPk(req.session.user_id, {
+      attributes: {exclude: ['password']},
+      include: [{ model: Post }],
+    });
+
+    const user = dbUserData.get({ plain: true });
+
+    console.log(user);
+
+    res.render('dashboard', {
+      user,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
   

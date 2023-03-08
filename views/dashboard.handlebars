@@ -1,5 +1,3 @@
-{{!-- need to figure out how to display posts only from the loggedin user --}}
-
 <section class="container">
   <h3 class="post-name">{{post.title}}</h3>
   <h4>{{post.content}}</h4>
@@ -12,4 +10,15 @@
   </section>
 </section>
 
-{{!-- need to add section for creating new post --}}
+{{!-- section for creating new post --}}
+
+<section class="create-post">
+    <form class="form-post">
+      <div class="div-post">
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>
+      <div class="div-post">
+        <button type="submit" class="btn btn-primary">Post</button>
+      </div>
+    </form>
+</section>
