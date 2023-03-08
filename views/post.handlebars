@@ -1,6 +1,6 @@
 <section class="container-post">
   <h3 class="post-name">{{post.title}}</h3>
-  <h4>{{post.author}}</h4>
+  <h4>{{post.user.username}}</h4>
   <h5>{{ format_date post.post_date}}</h5>
   <p>{{post.content}}</p>
 </section>
@@ -9,5 +9,13 @@
     {{> comment-details}}
     {{/each}}
 </section>
-
-{{!-- need to add section for leaving a comment --}}
+<section class="leave-comment">
+    <form class="form-comment">
+      <div class="div-comment">
+        <input class="form-input" type="text" id="comment-name" name="comment-name" />
+      </div>
+      <div class="div-comment">
+        <button type="submit" class="btn btn-primary">Leave a comment</button>
+      </div>
+    </form>
+</section>

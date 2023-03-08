@@ -49,10 +49,9 @@ nav {
 
 .btn {
     background: none;
-    border: none;
+    border: 1px solid black;
     text-decoration: none;
     font-size: 100%;
-    color: var(--light);
     padding: 10px;
     cursor: pointer;
 }
