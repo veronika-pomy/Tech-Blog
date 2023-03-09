@@ -37,9 +37,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
             include: [
               {
                 model: Comment,
+                include: [User],
                 attributes: [
                   'content',
                   'post_date',
+                  'user_id'
                 ],
                 // does not have the username for user who left comment 
                 // (connect by user_id f key to User)
@@ -52,6 +54,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
         });
 
         const post = dbPostData.get({ plain: true });
+        console.log(post);
         res.render('post', { post, loggedIn: req.session.loggedIn });
 
     } catch (err) {
@@ -64,10 +67,11 @@ router.get('/post/:id', withAuth, async (req, res) => {
 // Use middleware to check login status before allowing user to leave comment
 router.post('/post/:id', withAuth, async (req, res) => {
   try {
+    console.log(req.body);
     const newComment = await Comment.create({
       content: req.body,
       post_date: '2020-05-08 04:00:00',
-      post_id: id,
+      post_id: req.params.id,
       user_id: req.session.user_id,
     });
 
