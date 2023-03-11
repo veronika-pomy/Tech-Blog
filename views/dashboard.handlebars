@@ -2,9 +2,9 @@
 <section class="container">
   <div class="post">
     <h4>{{title}}</h4>
-    <h5>{{content}}</h5>
     <h5>{{format_date post_date}}</h5>
-    <button type='click' class="btn-update">Update</button>
+    <h5>{{content}}</h5>
+    <button class="btn-update" data-id="{{id}}">Update</button>
     <button class="btn-delete" data-id="{{id}}">Delete</button>
   </div>
 {{/each}}
@@ -17,7 +17,7 @@
         <input class="form-input" type="text" id="post-content" name="post-content" />
       </div>
       <div class="div-post">
-        <button type="submit" class="btn btn-primary">Create a new post</button>
+        <button type="submit" class="btn btn-post">Create a new post</button>
       </div>
     </form>
 </section>

@@ -67,7 +67,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 router.post('/post/:id', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
-      content: req.body,
+      content: req.body.content,
       post_date: '2020-05-08 04:00:00',
       post_id: req.params.id,
       user_id: req.session.user_id,
@@ -75,6 +75,7 @@ router.post('/post/:id', withAuth, async (req, res) => {
 
     res.status(200).json(newComment);
   } catch (err) {
+    console.error(err);
     res.status(400).json(err);
   }
 });
@@ -114,9 +115,48 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 // POST route for creating a new post
 // Use middleware to check login status before allowing user to create a new post
+router.post('/dashboard', async (req, res) => {
+  try { 
+    const postData = await Post.create({
+    title: req.body.title,
+    content: req.body.content,
+    post_date: "2020-05-08 04:00:00",
+    user_id: req.session.user_id,
+  });
+  
+  res.status(200).json(postData);
+
+  } catch (err) {
+    console.error(err);
+    res.status(400).json(err);
+  }
+});
+
 
 // PUT route for updating a post
 // Use middleware to check login status before allowing user to update a post
+router.put('/dashboard/:id', withAuth, async (req, res) => {
+  try {
+    const updatePostData = await Post.update(
+      req.body,
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    
+    if (!updatePostData) {
+      res.status(404).json({ message: 'No post with this id.' });
+      return;
+    }
+
+    res.status(200).json(updatePostData);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
 
 // DELETE route for deleting a post
 // Use middleware to check login status before allowing user to delete a post
@@ -135,6 +175,7 @@ router.delete('/dashboard/:id', withAuth, async (req, res) => {
 
     res.status(200).json(postData);
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });
