@@ -23,7 +23,6 @@ body {
 a {
     color: var(--dark);
     text-decoration: none;
-    color: var(--light);
     padding: 10px;
 }
 

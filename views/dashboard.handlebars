@@ -1,11 +1,13 @@
+{{#each user.posts}} 
 <section class="container">
   <div class="post">
-    <h4>{{user.posts.[0].title}}</h4>
-    <h5>{{user.posts.[0].content}}</h5>
-    <h5>{{format_date user.posts.[0].post_date}}</h5>
+    <h4>{{title}}</h4>
+    <h5>{{content}}</h5>
+    <h5>{{format_date post_date}}</h5>
     <button class="btn-update">Update</button>
     <button class="btn-delete">Delete</button>
   </div>
+{{/each}}
 
 {{!-- section to render comments to the post --}}
   {{!-- <section>

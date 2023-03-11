@@ -15,8 +15,7 @@ router.get('/', async (req, res) => {
         ],
     });
   
-      const posts = dbPostData.map((post) => post.get({ plain: true })
-      );
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
   
       res.render('homepage', {
         posts,
@@ -41,7 +40,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
                 attributes: [
                   'content',
                   'post_date',
-                  'user_id'
+                  'user_id',
                 ],
               },
               {
@@ -100,15 +99,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
           attributes: 
             ['title', 
             'content', 
-            'post_date']},
-        { model: Comment,
-          include: [User],
-          attributes: [
-            'content',
-            'post_date',
-            'user_id'
-          ],
-        }]
+            'post_date']}]
       });
 
     const user = dbUserData.get({ plain: true });
