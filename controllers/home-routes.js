@@ -43,19 +43,18 @@ router.get('/post/:id', withAuth, async (req, res) => {
                   'post_date',
                   'user_id'
                 ],
-                // does not have the username for user who left comment 
-                // (connect by user_id f key to User)
               },
               {
                 model: User,
-                attributes: ['username'], // only gets this attr? 
+                attributes: ['username'],
               },
             ],
         });
 
         const post = dbPostData.get({ plain: true });
+
         console.log(post);
-        console.log(post.comments[0].user.username);
+
         res.render('post', { post, loggedIn: req.session.loggedIn });
 
     } catch (err) {
@@ -68,7 +67,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
 // Use middleware to check login status before allowing user to leave comment
 router.post('/post/:id', withAuth, async (req, res) => {
   try {
-    console.log(req.body);
     const newComment = await Comment.create({
       content: req.body,
       post_date: '2020-05-08 04:00:00',
@@ -96,9 +94,22 @@ router.get('/login', (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const dbUserData = await User.findByPk(req.session.user_id, {
-      attributes: {exclude: ['password']},
-      include: [{ model: Post }],
-    });
+      attributes: {exclude: ['password', 'id', 'email']},
+      include: 
+        [{ model: Post, 
+          attributes: 
+            ['title', 
+            'content', 
+            'post_date']},
+        { model: Comment,
+          include: [User],
+          attributes: [
+            'content',
+            'post_date',
+            'user_id'
+          ],
+        }]
+      });
 
     const user = dbUserData.get({ plain: true });
 
@@ -113,6 +124,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// POST route for creating a new post
+// Use middleware to check login status before allowing user to create a new post
+
+// PUT route for updating a post
+// Use middleware to check login status before allowing user to update a post
+
+// DELETE route for deleting a post
+// Use middleware to check login status before allowing user to delete a post
 
 module.exports = router;
   

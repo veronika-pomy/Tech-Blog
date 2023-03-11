@@ -1,24 +1,29 @@
 <section class="container">
-  <h3 class="post-name">{{post.title}}</h3>
-  <h4>{{post.content}}</h4>
-  <h4>{{user.username}}</h4>
-  <h5>{{format_date post.post_date}}</h5>
-  <section>
+  <div class="post">
+    <h4>{{user.posts.[0].title}}</h4>
+    <h5>{{user.posts.[0].content}}</h5>
+    <h5>{{format_date user.posts.[0].post_date}}</h5>
+    <button class="btn-update">Update</button>
+    <button class="btn-delete">Delete</button>
+  </div>
+
+{{!-- section to render comments to the post --}}
+  {{!-- <section>
     {{#each post.comments as |comment|}}
     {{> comment-details}}
     {{/each}}
-  </section>
+  </section> --}}
 </section>
 
 {{!-- section for creating new post --}}
-
 <section class="create-post">
     <form class="form-post">
       <div class="div-post">
         <input class="form-input" type="text" id="post-name" name="post-name" />
+        <input class="form-input" type="text" id="post-content" name="post-content" />
       </div>
       <div class="div-post">
-        <button type="submit" class="btn btn-primary">Post</button>
+        <button type="submit" class="btn btn-primary">Create a new post</button>
       </div>
     </form>
 </section>

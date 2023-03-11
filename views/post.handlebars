@@ -1,7 +1,7 @@
 <section class="container-post">
   <h3 class="post-name">{{post.title}}</h3>
   <h4>{{post.user.username}}</h4>
-  <h5>{{ format_date post.post_date}}</h5>
+  <h5>{{format_date post.post_date}}</h5>
   <p>{{post.content}}</p>
 </section>
 <section class="container-comment">
@@ -20,4 +20,4 @@
     </form>
 </section>
 
-{{!-- link to the comment.js, look at login.handlebars --}}
+<script src="../public/js/comment.js"></script>
