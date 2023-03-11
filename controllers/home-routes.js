@@ -95,11 +95,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     const dbUserData = await User.findByPk(req.session.user_id, {
       attributes: {exclude: ['password', 'id', 'email']},
       include: 
-        [{ model: Post, 
-          attributes: 
-            ['title', 
-            'content', 
-            'post_date']}]
+        [{ model: Post}]
       });
 
     const user = dbUserData.get({ plain: true });
@@ -124,6 +120,24 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
 // DELETE route for deleting a post
 // Use middleware to check login status before allowing user to delete a post
+router.delete('/dashboard/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!postData) {
+      res.status(404).json({ message: 'No post with this id.' });
+      return;
+    }
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
   

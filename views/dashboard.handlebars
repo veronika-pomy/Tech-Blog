@@ -4,18 +4,10 @@
     <h4>{{title}}</h4>
     <h5>{{content}}</h5>
     <h5>{{format_date post_date}}</h5>
-    <button class="btn-update">Update</button>
-    <button class="btn-delete">Delete</button>
+    <button type='click' class="btn-update">Update</button>
+    <button class="btn-delete" data-id="{{id}}">Delete</button>
   </div>
 {{/each}}
-
-{{!-- section to render comments to the post --}}
-  {{!-- <section>
-    {{#each post.comments as |comment|}}
-    {{> comment-details}}
-    {{/each}}
-  </section> --}}
-</section>
 
 {{!-- section for creating new post --}}
 <section class="create-post">
@@ -29,3 +21,5 @@
       </div>
     </form>
 </section>
+
+<script src="./js/post.js"></script>
