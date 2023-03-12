@@ -90,9 +90,11 @@ THEN they are able to view posts, but they are prompted to log in again before t
 
 ## Demo
 
-Insert screenshot
+This screenshot demonstrates the view of the homepage when a user is logged in.
 
-Insert link to the app
+![home](./assets/img/home-page.png)
+
+You can check out the app following [this link.]()
 
 ---
 
