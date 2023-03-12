@@ -6,7 +6,9 @@
 
 This application is a CMS-style blog designed for developers and those interested in tech to share knowledge, publish thought pieces and opinions, and leave comments on other users' posts.
 
-App functionality:
+### App functionality
+
+---
 
 WHEN users visit the site
 
@@ -126,6 +128,7 @@ This list includes resources used for the project.
 - [Sequelize](https://sequelize.org/)
 - [Shields.io - license badge](https://shields.io/)
 - [Stack Overflow - Access an array index in handlebars](https://stackoverflow.com/questions/8044219/how-do-i-access-an-access-array-item-by-index-in-handlebars)
+- [Stack Overflow - Access an array index in handlebars: How to change border color of textarea on :focus](https://stackoverflow.com/questions/16156594/how-to-change-border-color-of-textarea-on-focus)
 
 Custom code from the Northwestern Coding Boot Camp MVC Module 14
 

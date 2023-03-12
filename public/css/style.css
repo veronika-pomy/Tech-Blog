@@ -75,6 +75,10 @@ nav {
 }
 
 /* COMMENT STYLE */
+.div-comment {
+ margin-top: 10px;
+}
+
 .post {
     margin: 50px;
     padding: 15px;
@@ -82,7 +86,7 @@ nav {
 
 .container-post {
     padding: 15px;
-    border: 4px solid var(--vista-blue);
+    border: 4px solid var(--dark);
 }
 
 .comment {
@@ -91,6 +95,7 @@ nav {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 15px;
+    border: 1px solid var(--dark-gray);
 }
 
 .comment h3, h5 {
@@ -102,6 +107,38 @@ nav {
     margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
+    
+}
+
+.form-input-comment {
+    padding: 10px;
+    width: 75%;
+    border: 2px solid var(--dark);
+}
+
+.form-input-comment[type=text]:focus {
+    background-color: var(--gray);
+    outline: none;
+    border-color: var(--dark-gray);
+}
+
+.btn-comment {
+    border: 2px dashed var(--dark);
+    background-color: var(--light);
+    text-decoration: none;
+    font-size: 100%;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.btn-comment:hover { 
+    border: 2px solid var(--dark);
+
+}
+
+.comment-text {
+    font-size: smaller;
 }
 
 /* POST STYLE DASHBOARD */
@@ -146,22 +183,22 @@ nav {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5px;
- }
+}
 
- .form-input[type=password] {
+.form-input[type=password] {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5px;
- }
+}
 
- input[type=text]:focus {
+.form-input[type=text]:focus {
     background-color: var(--gray);
     outline: none;
     border-color: var(--dark-gray);
-  }
+}
 
-  input[type=password]:focus {
+.form-input[type=password]:focus {
     background-color: var(--gray);
     outline: none;
     border-color: var(--dark-gray);
-  }
+}
