@@ -30,7 +30,7 @@ router.get('/', async (req, res) => {
 
 // GET specific post by id with comments
 // Use middleware to check login status before allowing user to see post
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const dbPostData = await Post.findByPk(req.params.id, {
             include: [
@@ -64,7 +64,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
 // POST route for leaving a comment under a specific post 
 // Use middleware to check login status before allowing user to leave comment
-router.post('/post/:id', withAuth, async (req, res) => {
+router.post('/post/:id', async (req, res) => {
   try {
     const newComment = await Comment.create({
       content: req.body.content,
