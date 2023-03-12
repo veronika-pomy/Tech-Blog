@@ -2,18 +2,16 @@
 <section class="container">
   <div class="post">
     <h4>{{title}}</h4>
-    <h5>{{format_date post_date}}</h5>
+    <h5>{{format_date createdAt}}</h5>
     <h5>{{content}}</h5>
-    <button class="btn-update" data-id="{{id}}" onclick = "change()">Update</button>
-    <button class="btn-delete" data-id="{{id}}">Delete</button>
+    <button class="btn-update" data-id="{{id}}" onclick ="updateButtonHandler (event)">Update</button>
+    <button class="btn-delete" data-id="{{id}}" onclick ="deleteButtonHandler (event)">Delete</button>
 
-      {{!-- conditional for when the update button is clicked to render a text box
-      and submit button --}}
       {{!-- how to render input field conditionally?  --}}
       <section class="update-post">
           <form class="form-post-update">
             <div class="div-post-update">
-              <input class="form-input" type="text" id="post-content-update" name="post-content-update" />
+              <input class="form-input" type="text" id="post-content-update-{{id}}" name="post-content-update" />
             </div>
           </form>
       </section>
@@ -34,11 +32,3 @@
 </section>
 
 <script src="./js/post.js"></script>
-<script type = 'text/javascript'>
-  function change () {
-    const container = document.querySelector('.container');
-    console.log(container);
-    container.setAttribute('id', 'update');
-    console.log(container);
-  };
-</script>

@@ -2,7 +2,6 @@ const newCommentHandler = async (event) => {
     event.preventDefault();
 
     const content = document.querySelector("#comment-name").value.trim();;
-
     
     const response = await fetch('/post/:id' , {
         method: 'POST',

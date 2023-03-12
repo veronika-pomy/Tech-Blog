@@ -23,13 +23,12 @@ const createPostButtonHandler = async (event) => {
 };
 
 // fetch PUT for update
-const updateButtonHandler = async (event) => {
+async function updateButtonHandler (event) {
 
     if (event.target.hasAttribute('data-id')){
 
         const id = event.target.getAttribute('data-id');
-        // how to get the data from the input field? 
-        const contentUpdate = document.querySelector('#post-content-update').value.trim();
+        const contentUpdate = document.querySelector(`#post-content-update-${id}`).value.trim();
 
         const response = await fetch(`/dashboard/${id}`, {
             method: "PUT",
@@ -52,7 +51,7 @@ const updateButtonHandler = async (event) => {
 };
 
 // fetch DELETE for delete
-const deleteButtonHandler = async (event) => {
+async function deleteButtonHandler (event) {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
@@ -72,13 +71,3 @@ const deleteButtonHandler = async (event) => {
 document
   .querySelector('.form-post')
   .addEventListener('submit', createPostButtonHandler);
-
-// event listener for update button
-document
-  .querySelector('.btn-update')
-  .addEventListener('click', updateButtonHandler);
-
-// event listener for delete button
-document
-  .querySelector('.btn-delete')
-  .addEventListener('click', deleteButtonHandler);

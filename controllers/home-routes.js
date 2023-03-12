@@ -39,8 +39,9 @@ router.get('/post/:id', async (req, res) => {
                 include: [User],
                 attributes: [
                   'content',
-                  'post_date',
+                  'created_at',
                   'user_id',
+                  'post_id',
                 ],
               },
               {
@@ -68,7 +69,6 @@ router.post('/post/:id', async (req, res) => {
   try {
     const newComment = await Comment.create({
       content: req.body.content,
-      post_date: '2020-05-08 04:00:00',
       post_id: req.params.id,
       user_id: req.session.user_id,
     });
@@ -120,7 +120,6 @@ router.post('/dashboard', async (req, res) => {
     const postData = await Post.create({
     title: req.body.title,
     content: req.body.content,
-    post_date: "2020-05-08 04:00:00",
     user_id: req.session.user_id,
   });
   
