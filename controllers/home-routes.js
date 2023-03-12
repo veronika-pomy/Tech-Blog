@@ -23,14 +23,14 @@ router.get('/', async (req, res) => {
       });
 
     } catch (err) {
-      console.log(err);
+      console.error(err);
       res.status(500).json(err);
     }
 });
 
 // GET specific post by id with comments
 // Use middleware to check login status before allowing user to see post
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', withAuth, async (req, res) => {
     try {
         const dbPostData = await Post.findByPk(req.params.id, {
             include: [
@@ -53,19 +53,17 @@ router.get('/post/:id', async (req, res) => {
 
         const post = dbPostData.get({ plain: true });
 
-        console.log(post);
-
         res.render('post', { post, loggedIn: req.session.loggedIn });
 
     } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+      console.error(err);
+      res.status(500).json(err);
     }
 });
 
 // POST route for leaving a comment under a specific post 
 // Use middleware to check login status before allowing user to leave comment
-router.post('/post/:id', async (req, res) => {
+router.post('/post/:id', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
       content: req.body.content,
@@ -91,6 +89,7 @@ router.get('/login', (req, res) => {
 });
 
 // GET all posts for a specific user
+// Use middleware to check login status before allowing user to create a new post
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const dbUserData = await User.findByPk(req.session.user_id, {
@@ -101,21 +100,19 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = dbUserData.get({ plain: true });
 
-    console.log(user);
-
     res.render('dashboard', {
       user,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
 
 // POST route for creating a new post
 // Use middleware to check login status before allowing user to create a new post
-router.post('/dashboard', async (req, res) => {
+router.post('/dashboard', withAuth, async (req, res) => {
   try { 
     const postData = await Post.create({
     title: req.body.title,

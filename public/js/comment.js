@@ -3,7 +3,7 @@ const newCommentHandler = async (event) => {
 
     const content = document.querySelector("#comment-name").value.trim();;
     const postId = location.pathname.split('/')[2];
-    const response = await fetch('/api/dashboard/post/' + postId , {
+    const response = await fetch('/post/' + postId , {
         method: 'POST',
         body: JSON.stringify({content}),
         headers: {
