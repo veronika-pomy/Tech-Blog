@@ -76,7 +76,7 @@ nav {
 
 /* COMMENT STYLE */
 .div-comment {
- margin-top: 10px;
+    margin-top: 10px;
 }
 
 .post {
@@ -90,8 +90,8 @@ nav {
 }
 
 .comment {
-    background-color: var(--periwinkle);
-    color: var(--royal-purple);
+    background-color: var(--light);
+    color: var(--dark);
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 15px;
@@ -141,7 +141,81 @@ nav {
     font-size: smaller;
 }
 
-/* POST STYLE DASHBOARD */
+/* UPDATE / DELETE POST DASHBOARD */
+.post-dashboard {
+    border: 3px solid var(--dark);
+    margin: 50px;
+    padding: 15px;
+}
+
+.post-title-dash {
+    margin: 5px;
+}
+
+.form-input-post-update {
+    padding: 10px;
+    width: 98%;
+    border: 2px solid var(--dark);
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.form-input-post-update[type=text]:focus {
+    background-color: var(--gray);
+    outline: none;
+    border-color: var(--dark-gray);
+}
+
+.btn-update,
+.btn-delete {
+    border: 2px dashed var(--dark);
+    background-color: var(--light);
+    text-decoration: none;
+    font-size: 100%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.btn-update:hover,
+.btn-delete:hover {
+    border: 2px solid var(--dark);
+}
+
+/* CREATE POST STYLE DASHBOARD */
+.create-post {
+    padding: 20px;
+}
+
+.form-input-post {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid var(--dark);
+    margin-bottom: 10px;
+}
+
+.form-input-post[type=text]:focus {
+    background-color: var(--gray);
+    outline: none;
+    border-color: var(--dark-gray);
+}
+
+.div-post-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-post {
+    border: 2px dashed var(--dark);
+    background-color: var(--light);
+    text-decoration: none;
+    font-size: 100%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.btn-post:hover {
+    border: 2px solid var(--dark);
+}
 
 /* SIGN IN & SIGN UP PAGE STYLE */
 .card {
@@ -175,8 +249,8 @@ nav {
 }
 
 .form-input {
-  width: 100%;
-  border: 2px solid var(--dark);
+    width: 100%;
+    border: 2px solid var(--dark);
 }
 
 .form-input[type=text] {
