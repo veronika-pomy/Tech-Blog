@@ -94,7 +94,7 @@ This screenshot demonstrates the view of the homepage when a user is logged in.
 
 ![home](./assets/img/home-page.png)
 
-You can check out the app following [this link.]()
+You can check out the app following [this link.](https://the-tech-blog-2023.herokuapp.com/)
 
 ---
 
