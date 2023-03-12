@@ -113,7 +113,6 @@ This list includes resources used for the project.
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 - [Best README Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
 - [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
-- [Coolors](https://coolors.co/)
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [Google Fonts API: M PLUS Rounded 1c](https://fonts.google.com/specimen/M+PLUS+Rounded+1c)
 - [Express](https://expressjs.com/)

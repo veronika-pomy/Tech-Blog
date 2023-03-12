@@ -1,12 +1,8 @@
 :root {
-    --uranian-blue: #A0DDFF;
-    --vista-blue: #758ECD;
-    --periwinkle: #C1CEFE;
-    --cornflower-blue: #7189FF;
-    --royal-purple: #624CAB;
     --light: white;
     --dark: black;
-    --error: red;
+    --gray: lightgray;
+    --dark-gray: #555;
     --border-radius: 0.3rem;
 }
 
@@ -20,10 +16,10 @@ body {
     background-color: var(--light);
 }
 
-a {
+.header-link, a {
     color: var(--dark);
     text-decoration: none;
-    padding: 10px;
+    padding: 50px;
 }
 
 a:visited {
@@ -33,12 +29,11 @@ a:visited {
 header {
     padding: 20px;
     text-align: left;
-    background: var(--periwinkle);
-    color: var(--light);
+    border-bottom: 5px dashed var(--dark);
 }
 
 nav {
-    padding: 5px;
+    text-align: center;
 }
 
 .main-title {
@@ -46,20 +41,37 @@ nav {
     margin-bottom: 0;
 }
 
-.btn {
+.header-btn {
     background: none;
-    border: 1px solid black;
+    border: none;
     text-decoration: none;
     font-size: 100%;
-    padding: 10px;
+    padding-left: 50px;
     cursor: pointer;
 }
 
-/* POST STYLE */
+/* POST STYLE HOME PAGE */
 .post-container {
-    margin: 50px;
+    margin: 25px;
     padding: 15px;
+    border: 4px dashed var(--dark);
+}
+
+.post-container:hover {
     border: 4px solid var(--dark);
+}
+
+.post-link {
+    padding: 0;
+}
+
+.date-p {
+    font-size: x-small;
+    margin-top: 0;
+}
+
+.user-name {
+    margin-bottom: 5px;
 }
 
 /* COMMENT STYLE */
@@ -91,3 +103,65 @@ nav {
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+/* POST STYLE DASHBOARD */
+
+/* SIGN IN & SIGN UP PAGE STYLE */
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20%;
+}
+
+.login-card {
+    border: 3px solid var(--dark);
+    padding: 30px;
+}
+
+.btn-primary {
+    border: 2px dashed var(--dark);
+    background-color: var(--light);
+    text-decoration: none;
+    font-size: 100%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.btn-primary:hover {
+    border: 2px solid var(--dark);
+}
+
+.form-group {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  border: 2px solid var(--dark);
+}
+
+.form-input[type=text] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+ }
+
+ .form-input[type=password] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+ }
+
+ input[type=text]:focus {
+    background-color: var(--gray);
+    outline: none;
+    border-color: var(--dark-gray);
+  }
+
+  input[type=password]:focus {
+    background-color: var(--gray);
+    outline: none;
+    border-color: var(--dark-gray);
+  }

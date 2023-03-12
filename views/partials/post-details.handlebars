@@ -1,8 +1,8 @@
 <section class="post-container">
-  <a href="/post/{{id}}">
+  <a class="post-link" href="/post/{{id}}">
     <h2>{{title}}</h2>
-    <h3>{{user.username}}</h3>
+    <h4 class="user-name">By {{user.username}}</h4>
   </a>
-    <p>{{format_date createdAt}}</p>
+    <p class="date-p">{{format_date createdAt}}</p>
     <p>{{content}}</p>
 </section>
