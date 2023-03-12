@@ -24,11 +24,12 @@ const createPostButtonHandler = async (event) => {
 
 // fetch PUT for update
 const updateButtonHandler = async (event) => {
+
     if (event.target.hasAttribute('data-id')){
+
         const id = event.target.getAttribute('data-id');
-        // get the value of the content currently in post
-        // update it??? 
-        const data = 'test';
+        // how to get the data from the input field? 
+        const contentUpdate = document.querySelector('#post-content-update').value.trim();
 
         const response = await fetch(`/dashboard/${id}`, {
             method: "PUT",
@@ -37,7 +38,7 @@ const updateButtonHandler = async (event) => {
             },
             body: JSON.stringify(
                 {
-                    'content': 'test',
+                    'content': contentUpdate,
                 }
             )
         });

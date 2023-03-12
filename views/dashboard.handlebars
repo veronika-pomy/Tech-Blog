@@ -6,6 +6,19 @@
     <h5>{{content}}</h5>
     <button class="btn-update" data-id="{{id}}">Update</button>
     <button class="btn-delete" data-id="{{id}}">Delete</button>
+
+      {{!-- conditional for when the update button is clicked to render a text box
+      and submit button --}}
+      {{!-- how to render input field conditionally?  --}}
+      {{!-- {{#if }} --}}
+      <section class="update-post">
+          <form class="form-post-update">
+            <div class="div-post-update">
+              <input class="form-input" type="text" id="post-content-update" name="post-content-update" />
+            </div>
+          </form>
+      </section>
+      {{!-- {{/if}} --}}
   </div>
 {{/each}}
 
